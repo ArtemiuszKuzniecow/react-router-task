@@ -1,29 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import App from "./App";
-import "./index.css";
-import { createBrowserHistory } from "history";
-import HomePage from "./components/HomePage";
-import UsersListPage from "./components/UsersListPage";
-import UserPage from "./components/UserPage";
 import EditUserPage from "./components/EditUserPage";
-
-const history = createBrowserHistory();
+import HomePage from "./components/HomePage";
+import UserPage from "./components/UserPage";
+import UsersListPage from "./components/UsersListPage";
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App>
-        <Router history={history}>
-          <Switch>
-            <Route path="/users/:userId/edit" component={EditUserPage} />
-            <Route path="/users/:userId" component={UserPage} />
-            <Route path="/users" component={UsersListPage} />
-            <Route path="/" exact component={HomePage} />
-          </Switch>
-        </Router>
+        <Switch>
+          <Route path="/users/:userId/edit" component={EditUserPage} />
+          <Route path="/users/:userId" component={UserPage} />
+          <Route path="/users" component={UsersListPage} />
+          <Route path="/" exact component={HomePage} />
+        </Switch>
       </App>
     </BrowserRouter>
   </React.StrictMode>

@@ -12,6 +12,7 @@ const UsersListPage = () => {
           {user.name} - {<NavLink to={"/users/" + user.id}>Info</NavLink>}
         </li>
       ))}
+      <NavLink to="/">Back</NavLink>
     </div>
   );
 };
