@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
-import App, { EditUserPage, HomePage, UserPage, UsersListPage } from "./App";
+import App from "./App";
 import "./index.css";
 import { createBrowserHistory } from "history";
+import HomePage from "./components/HomePage";
+import UsersListPage from "./components/UsersListPage";
+import UserPage from "./components/UserPage";
+import EditUserPage from "./components/EditUserPage";
 
 const history = createBrowserHistory();
 
