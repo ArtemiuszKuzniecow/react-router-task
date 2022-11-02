@@ -1,5 +1,15 @@
+import React from "react";
+import { useRoutes } from "react-router-dom";
+import routes from "./routes";
+
 function App() {
-  return <div>React Router 6!</div>;
+  const elements = useRoutes(routes);
+  return (
+    <>
+      <h2>App Layout</h2>
+      {elements}
+    </>
+  );
 }
 
 export default App;
