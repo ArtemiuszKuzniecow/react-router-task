@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { users } from "../users";
 
 const UserPage = () => {

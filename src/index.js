@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import App from "./App";
 import EditUserPage from "./components/EditUserPage";
 import HomePage from "./components/HomePage";
 import UserPage from "./components/UserPage";
 import UsersListPage from "./components/UsersListPage";
 import "./index.css";
+import ProtectedRoute from "./protectedRoute";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,9 +16,11 @@ root.render(
       <App>
         <Switch>
           <Route path="/users/:userId/edit" component={EditUserPage} />
-          <Route path="/users/:userId" component={UserPage} />
+          <ProtectedRoute path="/users/:userId" component={UserPage} />
           <Route path="/users" component={UsersListPage} />
           <Route path="/" exact component={HomePage} />
+
+          <Redirect to="/" />
         </Switch>
       </App>
     </BrowserRouter>

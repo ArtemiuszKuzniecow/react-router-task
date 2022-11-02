@@ -1,6 +1,6 @@
 import React from "react";
-import { users } from "../users";
 import { NavLink } from "react-router-dom";
+import { users } from "../users";
 
 const UsersListPage = () => {
   return (
