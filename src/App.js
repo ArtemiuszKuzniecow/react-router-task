@@ -1,5 +1,5 @@
 function App() {
-  return <div>Hello, World!</div>;
+  return <div>React Router 6!</div>;
 }
 
 export default App;
