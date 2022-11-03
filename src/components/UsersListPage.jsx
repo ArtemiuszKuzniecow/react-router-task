@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { users } from "../users";
 
 const UsersListPage = () => {
@@ -8,10 +9,10 @@ const UsersListPage = () => {
       <ul>List</ul>
       {users.map((user) => (
         <li key={user.id}>
-          {user.name} - {<button>Info</button>}
+          {user.name} - {<NavLink to={`${user.id}`}>Info</NavLink>}
         </li>
       ))}
-      <button>Back</button>
+      <NavLink to="/">Back</NavLink>
     </div>
   );
 };

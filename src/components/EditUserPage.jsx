@@ -1,16 +1,24 @@
 import React from "react";
+import { NavLink, useParams } from "react-router-dom";
 import { users } from "../users";
 
 export const EditUserPage = () => {
+  const { userId } = useParams();
   return (
     <div>
       <h1>Edit User Page</h1>
 
-      <button>Back to User Page</button>
+      <NavLink to={`/users/${userId}`}>Back to User Page</NavLink>
       <br />
-      <button>Another User Page</button>
+      <NavLink
+        to={`/users/${
+          users.find((u) => u.id === +userId + 1) ? +userId + 1 : +userId - 1
+        }`}
+      >
+        Another User Page
+      </NavLink>
       <br />
-      <button>Back to Users List</button>
+      <NavLink to="/users">Back to Users List</NavLink>
     </div>
   );
 };

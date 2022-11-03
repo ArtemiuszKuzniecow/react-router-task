@@ -1,4 +1,5 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import EditUserPage from "./components/EditUserPage";
 import HomePage from "./components/HomePage";
 import UserPage from "./components/UserPage";
@@ -6,26 +7,34 @@ import UsersListPage from "./components/UsersListPage";
 
 const routes = [
   {
-    path: "",
+    path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/users",
     children: [
       {
-        path: "users",
+        index: true,
         element: <UsersListPage />,
+      },
+      {
+        path: ":userId",
         children: [
           {
-            path: ":userId",
+            index: true,
             element: <UserPage />,
-            children: [
-              {
-                path: "edit",
-                element: <EditUserPage />,
-              },
-            ],
+          },
+          {
+            path: "edit",
+            element: <EditUserPage />,
           },
         ],
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" />,
   },
 ];
 
